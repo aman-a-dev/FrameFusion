@@ -1,0 +1,62 @@
+nav {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--dark-col);
+    border-radius: 30px;
+    position: fixed;
+    width: 95%;
+    left: 2.5%;
+    right: 2.5%;
+    bottom: 70px;
+    height: 50px;
+    box-shadow: 0 0 10px var(--card-bg);
+    z-index: 1000;
+    .label {
+        padding: 8px 18px;
+        transition: all 200ms;
+        display: inline-block;
+    }
+
+    .label input[type="radio"] {
+        display: none;
+    }
+    .label > i {
+        transition: all 200ms;
+        color: var(--card-bg);
+        font-size: 20px;
+    }
+    .label:hover:not(:has(input:checked)) > i {
+        color: #d17842;
+        scale: 1.2;
+    }
+    .label::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        border-radius: 5px;
+        position: relative;
+        left: 5%;
+        top: 30px;
+        background: var(--brand-col);
+        transition: all 200ms;
+    }
+    .label > i {
+        transition: 300ms;
+        color: var(--gray-col);
+        margin-top: 0;
+    }
+    .label:has(input:checked) > i {
+        color: var(--brand-col);
+        scale: 1.2;
+        margin-top: -5px;
+    }
+
+    .label:has(input:checked)::before {
+        width: 100%;
+        left: 0;
+        top: 100px;
+    }
+}

@@ -1,0 +1,21 @@
+:root {
+    --brand-col: #d17842;
+    --dark-col: #0c0f14;
+    --card-bg: #52555a;
+    --gray-col: #aeaeae;
+}
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Backso;
+    src: url(/fonts/Backso.ttf);
+}
+body {
+    min-height: 100vh;
+    background: linear-gradient(90deg, var(--dark-col), var(--card-bg));
+}

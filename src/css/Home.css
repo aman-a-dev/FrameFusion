@@ -1,0 +1,672 @@
+.hero-section {
+    margin: 50px 0 300px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+    .txt-box {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        padding: 40px 0;
+        border-radius: 10px;
+        p {
+            color: var(--gray-col);
+            text-align: center;
+            width: 90%;
+        }
+        button {
+            padding: 10px 30px;
+            background: var(--brand-col);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        .GradientText {
+            font-size: 40px;
+            font-family: Backso;
+        }
+    }
+    .animated-gradient-text {
+        position: relative;
+        margin: 0 auto;
+        display: flex;
+        max-width: fit-content;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1.25 rem;
+        font-weight: 500;
+        backdrop-filter: blur(10 px);
+        transition: box-shadow 0.5 s ease-out;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: 300 % 100 %;
+        animation: gradient linear infinite;
+        border-radius: inherit;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .gradient-overlay::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: inherit;
+        width: calc(100 % -2 px);
+        height: calc(100 % -2 px);
+        left: 50 %;
+        top: 50 %;
+        transform: translate(-50 %, -50 %);
+        background-color: #060010;
+        z-index: -1;
+    }
+
+    .text-content {
+        display: inline-block;
+        position: relative;
+        z-index: 2;
+        background-size: 300% 100%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: gradient linear infinite;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/*** responsibility **/
+@media screen and (min-width: 700px) {
+    .hero-section {
+        .txt-box {
+            padding: 40px 20px;
+        }
+        .GradientText {
+            font-size: 100px !important;
+        }
+        .macbook {
+            top: 160%;
+        }
+    }
+}
+/***Pc **/
+
+.macbook {
+    width: 150px;
+    height: 96px;
+    position: absolute;
+    left: 50%;
+    top: 180%;
+    margin: -85px 0 0 -78px;
+    perspective: 500px;
+
+    .shadow {
+        position: absolute;
+        width: 60px;
+        height: 0px;
+        left: 40px;
+        top: 160px;
+        transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+        box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+        animation: shadow infinite 7s ease;
+    }
+
+    .inner {
+        z-index: 20;
+        position: absolute;
+        width: 150px;
+        height: 96px;
+        left: 0;
+        top: 0;
+        transform-style: preserve-3d;
+        transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+        animation: rotate infinite 7s ease;
+    }
+
+    .screen {
+        width: 150px;
+        height: 96px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-radius: 7px;
+        background: #ddd;
+        transform-style: preserve-3d;
+        transform-origin: 50% 93px;
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        animation: lid-screen infinite 7s ease;
+        background-image: linear-gradient(
+            45deg,
+            rgba(0, 0, 0, 0.34) 0%,
+            rgba(0, 0, 0, 0) 100%
+        );
+        background-position: left bottom;
+        background-size: 300px 300px;
+        box-shadow: inset 0 3px 7px rgba(255, 255, 255, 0.5);
+    }
+
+    .screen .logo {
+        position: absolute;
+        width: 20px;
+        height: 24px;
+        left: 50%;
+        top: 50%;
+        margin: -12px 0 0 -10px;
+        transform: rotateY(180deg) translateZ(0.1px);
+    }
+
+    .screen .face-one {
+        width: 150px;
+        height: 96px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-radius: 7px;
+        background: #d3d3d3;
+        transform: translateZ(2px);
+        background-image: linear-gradient(
+            45deg,
+            rgba(0, 0, 0, 0.24) 0%,
+            rgba(0, 0, 0, 0) 100%
+        );
+    }
+
+    .screen .face-one .camera {
+        width: 3px;
+        height: 3px;
+        border-radius: 100%;
+        background: #000;
+        position: absolute;
+        left: 50%;
+        top: 4px;
+        margin-left: -1.5px;
+    }
+
+    .screen .face-one .display {
+        width: 130px;
+        height: 74px;
+        margin: 10px;
+        background-color: #000;
+        background-size: 100% 100%;
+        border-radius: 1px;
+        position: relative;
+        box-shadow: inset 0 0 2px rgba(0, 0, 0, 1);
+    }
+
+    .screen .face-one .display .shade {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 130px;
+        height: 74px;
+        background: linear-gradient(
+            -135deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.1) 47%,
+            rgba(255, 255, 255, 0) 48%
+        );
+        animation: screen-shade infinite 7s ease;
+        background-size: 300px 200px;
+        background-position: 0px 0px;
+    }
+
+    .screen .face-one span {
+        position: absolute;
+        top: 85px;
+        left: 57px;
+        font-size: 6px;
+        color: #666;
+    }
+
+    .macbody {
+        width: 150px;
+        height: 96px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-radius: 7px;
+        background: #cbcbcb;
+        transform-style: preserve-3d;
+        transform-origin: 50% bottom;
+        transform: rotateX(-90deg);
+        animation: lid-macbody infinite 7s ease;
+        background-image: linear-gradient(
+            45deg,
+            rgba(0, 0, 0, 0.24) 0%,
+            rgba(0, 0, 0, 0) 100%
+        );
+    }
+
+    .macbody .face-one {
+        width: 150px;
+        height: 96px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-radius: 7px;
+        transform-style: preserve-3d;
+        background: #dfdfdf;
+        animation: lid-keyboard-area infinite 7s ease;
+        transform: translateZ(-2px);
+        background-image: linear-gradient(
+            30deg,
+            rgba(0, 0, 0, 0.24) 0%,
+            rgba(0, 0, 0, 0) 100%
+        );
+    }
+
+    .macbody .touchpad {
+        width: 40px;
+        height: 31px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-radius: 4px;
+        margin: -44px 0 0 -18px;
+        background: #cdcdcd;
+        background-image: linear-gradient(
+            30deg,
+            rgba(0, 0, 0, 0.24) 0%,
+            rgba(0, 0, 0, 0) 100%
+        );
+        box-shadow: inset 0 0 3px #888;
+    }
+
+    .macbody .keyboard {
+        width: 130px;
+        height: 45px;
+        position: absolute;
+        left: 7px;
+        top: 41px;
+        border-radius: 4px;
+        transform-style: preserve-3d;
+        background: #cdcdcd;
+        background-image: linear-gradient(
+            30deg,
+            rgba(0, 0, 0, 0.24) 0%,
+            rgba(0, 0, 0, 0) 100%
+        );
+        box-shadow: inset 0 0 3px #777;
+        padding: 0 0 0 2px;
+    }
+
+    .keyboard .key {
+        width: 6px;
+        height: 6px;
+        background: #444;
+        float: left;
+        margin: 1px;
+        transform: translateZ(-2px);
+        border-radius: 2px;
+        box-shadow: 0 -2px 0 #222;
+        animation: keys infinite 7s ease;
+    }
+
+    .key.space {
+        width: 45px;
+    }
+
+    .key.f {
+        height: 3px;
+    }
+
+    .macbody .pad {
+        width: 5px;
+        height: 5px;
+        background: #333;
+        border-radius: 100%;
+        position: absolute;
+    }
+
+    .pad.one {
+        left: 20px;
+        top: 20px;
+    }
+
+    .pad.two {
+        right: 20px;
+        top: 20px;
+    }
+
+    .pad.three {
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .pad.four {
+        left: 20px;
+        bottom: 20px;
+    }
+}
+@keyframes rotate {
+    0% {
+        transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    5% {
+        transform: rotateX(-20deg) rotateY(-20deg) rotateZ(0deg);
+    }
+
+    20% {
+        transform: rotateX(30deg) rotateY(200deg) rotateZ(0deg);
+    }
+
+    25% {
+        transform: rotateX(-60deg) rotateY(150deg) rotateZ(0deg);
+    }
+
+    60% {
+        transform: rotateX(-20deg) rotateY(130deg) rotateZ(0deg);
+    }
+
+    65% {
+        transform: rotateX(-20deg) rotateY(120deg) rotateZ(0deg);
+    }
+
+    80% {
+        transform: rotateX(-20deg) rotateY(375deg) rotateZ(0deg);
+    }
+
+    85% {
+        transform: rotateX(-20deg) rotateY(357deg) rotateZ(0deg);
+    }
+
+    87% {
+        transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+    }
+}
+
+@keyframes lid-screen {
+    0% {
+        transform: rotateX(0deg);
+        background-position: left bottom;
+    }
+
+    5% {
+        transform: rotateX(50deg);
+        background-position: left bottom;
+    }
+
+    20% {
+        transform: rotateX(-90deg);
+        background-position: -150px top;
+    }
+
+    25% {
+        transform: rotateX(15deg);
+        background-position: left bottom;
+    }
+
+    30% {
+        transform: rotateX(-5deg);
+        background-position: right top;
+    }
+
+    38% {
+        transform: rotateX(5deg);
+        background-position: right top;
+    }
+
+    48% {
+        transform: rotateX(0deg);
+        background-position: right top;
+    }
+
+    90% {
+        transform: rotateX(0deg);
+        background-position: right top;
+    }
+
+    100% {
+        transform: rotateX(0deg);
+        background-position: right center;
+    }
+}
+
+@keyframes lid-macbody {
+    0% {
+        transform: rotateX(-90deg);
+    }
+
+    50% {
+        transform: rotateX(-90deg);
+    }
+
+    100% {
+        transform: rotateX(-90deg);
+    }
+}
+
+@keyframes lid-keyboard-area {
+    0% {
+        background-color: #dfdfdf;
+    }
+
+    50% {
+        background-color: #bbb;
+    }
+
+    100% {
+        background-color: #dfdfdf;
+    }
+}
+
+@keyframes screen-shade {
+    0% {
+        background-position: -20px 0px;
+    }
+
+    5% {
+        background-position: -40px 0px;
+    }
+
+    20% {
+        background-position: 200px 0;
+    }
+
+    50% {
+        background-position: -200px 0;
+    }
+
+    80% {
+        background-position: 0px 0px;
+    }
+
+    85% {
+        background-position: -30px 0;
+    }
+
+    90% {
+        background-position: -20px 0;
+    }
+
+    100% {
+        background-position: -20px 0px;
+    }
+}
+
+@keyframes keys {
+    0% {
+        box-shadow: 0 -2px 0 #222;
+    }
+
+    5% {
+        box-shadow: 1 -1px 0 #222;
+    }
+
+    20% {
+        box-shadow: -1px 1px 0 #222;
+    }
+
+    25% {
+        box-shadow: -1px 1px 0 #222;
+    }
+
+    60% {
+        box-shadow: -1px 1px 0 #222;
+    }
+
+    80% {
+        box-shadow: 0 -2px 0 #222;
+    }
+
+    85% {
+        box-shadow: 0 -2px 0 #222;
+    }
+
+    87% {
+        box-shadow: 0 -2px 0 #222;
+    }
+
+    100% {
+        box-shadow: 0 -2px 0 #222;
+    }
+}
+
+@keyframes shadow {
+    0% {
+        transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+        box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    5% {
+        transform: rotateX(80deg) rotateY(10deg) rotateZ(0deg);
+        box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    20% {
+        transform: rotateX(30deg) rotateY(-20deg) rotateZ(-20deg);
+        box-shadow: 0 0 50px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    25% {
+        transform: rotateX(80deg) rotateY(-20deg) rotateZ(50deg);
+        box-shadow: 0 0 35px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    60% {
+        transform: rotateX(80deg) rotateY(0deg) rotateZ(-50deg) translateX(30px);
+        box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    100% {
+        box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+    }
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    input {
+        padding: 10px 20px;
+        border-radius: 10px 0 0 10px;
+        border: none;
+        outline: none;
+        width: 80%;
+        &:focus {
+            outline: 3px solid var(--brand-col);
+        }
+        &:focus + button {
+            outline: 3px solid var(--brand-col);
+        }
+    }
+    button {
+        padding: 10px;
+        border-radius: 0 10px 10px 0;
+        border: none;
+        transition: all 0.3s ease-in-out;
+        &:active {
+            background: var(--brand-col);
+            color: #fff;
+        }
+    }
+}
+.error-message {
+    color: #e64343;
+    text-align: center;
+    font-family: Backso;
+}
+
+.content {
+    position: relative;
+    top: 100px;
+}
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    justify-content: center;
+}
+
+.loyer {
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    width: 100vw;
+    background: transparent;
+    backdrop-filter: blur(50px);
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    h1 {
+        text-align: center;
+        font-family: Backso;
+        animation: introani2 2s ease-in-out forwards;
+    }
+    img {
+        animation: introani 1s ease-in-out forwards;
+    }
+}
+
+@keyframes introani {
+    from {
+        transform: rotate(90deg) scale(0.3);
+    }
+    to {
+        transform: rotate(0) scale(1);
+    }
+}
+@keyframes introani2 {
+    from {
+        transform: translateY(300%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
